@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Recepissé</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap");
+
+      @media screen, print {
+        img {
+          width: 80px;
+        }
+        * {
+          margin: 0;
+        }
+        body {
+          font-family: "Poppins", sans-serif;
+        }
+        .page {
+          display: block;
+          margin: 0 auto;
+          margin-bottom: 0.5cm;
+          margin-top: 1cm;
+          padding: 2% 50px;
+          width: 21cm;
+          height: 29.7cm;
+          position: relative;
+        }
+        span {
+          font-weight: 600;
+          text-decoration: underline;
+        }
+        p {
+          padding: 10px 0px;
+        }
+        .details {
+            line-height: 30px;
+        }
+        .container {
+          display: flex;
+          flex-direction: column;
+          height: 100%;
+          justify-content: space-between;
+        }
+        .qr-code img {
+            height: 4cm;
+            width: 4cm;
+            margin-top: 10px;
+            margin-left: 10px;
+        }
+        .details p {
+            margin-top: 20px;
+            margin-bottom: 50px;
+            font-size: 20px;
+        }
+        .details b {
+            margin-right: 30px;
+            text-decoration: underline;
+        }
+        .conclusion {
+            margin-left: 50%;
+            margin-top: 30px;
+        }
+        .line {
+          width: 20%;
+          height: 0px;
+          margin: 0px auto;
+          border: none;
+          border-bottom: 1.5px dashed black;
+        }
+        .solidLine {
+          width: 80%;
+          height: 0px;
+          margin: 0px auto;
+          border: none;
+          border-bottom: 2px solid black;
+          margin-top: 2px;
+          margin-bottom: 2px;
+        }
+
+        .solidBigLine {
+          width: 80%;
+          height: 0px;
+          margin: 0px auto;
+          border: none;
+          border-bottom: 4px solid black;
+        }
+        .entities {
+          display: flex;
+          justify-content: space-between;
+          font-size: 22px;
+          text-align: center;
+        }
+        .entities-name img {
+          margin-top: 10px;
+        }
+        .entity {
+          padding-bottom: 10px;
+          padding-top: 8px;
+          font-weight: 200;
+        }
+
+        .entity p {
+          text-transform: none;
+          font-size: 10px;
+          font-style: italic;
+        }
+        .numero {
+          font-size: 12px;
+        }
+        .date {
+          margin-bottom: 10px;
+        }
+        .title {
+          text-align: center;
+          font-size: 24px;
+          margin-top: 20px;
+          margin-bottom: 5px;
+        }
+        .title-description {
+          text-align: center;
+        }
+        .authority-title {
+          margin-bottom: 2.2cm;
+          font-weight: 700;
+        }
+
+        .authority-name {
+          font-weight: 600;
+          font-size: 20px;
+
+        }
+        footer {
+          page-break-inside: avoid;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container page">
+      <header>
+        <div class="entities">
+          <div class="entities-name">
+            <h6 class="entity">
+              <b
+                >MINISTERE DE L'ADMINISTRATION TERRITORIALE<br />
+                DE LA DECENTRALISATION ET <br />
+                DU DEVELOPPEMENT DES TERRITOIRES</b
+              >
+            </h6>
+            <hr class="line" />
+            <h6 class="entity">SECRETARIAT GENERAL</h6>
+            <hr class="line" />
+            <h6 class="entity">
+              DIRECTION DES LIBERTES PUBLIQUES ET <br />DES AFFAIRES POLITIQUES
+            </h6>
+            <hr class="line" />
+            <h6 class="entity">
+              DIVISION DES ORGANISATIONS CIVILES ET <br />
+              DES ASSOCIATIONS
+            </h6>
+            <hr class="line" />
+            <h6 class="entity numero">
+              <b>N°__________________/MATDDT-SG-DLPAP-DOCA</b>
+            </h6>
+          </div>
+          <div class="entities-code">
+            <div class="entity">
+              <h6>REPUBLIQUE TOGOLAISE</h6>
+              <p>Travail-Liberté-Patrie</p>
+            </div>
+            <hr class="line" />
+            <div class="qr-code">
+                <img src="{{qrCode}}" alt="qr_code" />
+            </div>
+          </div>
+        </div>
+        <h2 class="title">RECEPISSE DE DECLARATION D'ASSOCIATION</h2>
+        <h4 class="title-description">
+          (à faire insérer obligatoirement au Journal Officiel de la République
+          Togolaise)
+        </h4>
+        <hr class="solidLine" />
+        <hr class="solidBigLine" />
+        <hr class="solidLine" />
+      </header>
+      <main>
+        <div class="details">
+          <p><b>DENOMINATION: </b>{{denomination}}</p>
+          <p><b>SIEGE: </b>{{ville}}/{{commune}}/{{prefecture}}</p>
+          <p><b>BUT: </b>{{but}}</p>
+        </div>
+      </main>
+      <footer>
+        <div class="conclusion">
+          <p class="date">Lomé le {{dateSignature}}</p>
+          <h2 class="authority-title">Le Ministre de l'Etat</h2>
+          <u class="authority-name">{{ministre}}</u>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>
